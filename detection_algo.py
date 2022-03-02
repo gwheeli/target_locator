@@ -8,7 +8,7 @@ Created on Mon Feb 28 14:18:01 2022
 
 This script takes an image and find targets based off of a certain color 
 
-
+s
 """
 
 import numpy as np
@@ -16,9 +16,6 @@ import cv2
 
 from scipy.signal import medfilt
 from scipy.signal import find_peaks
-
-
-import matplotlib.pyplot as plt
 
 
 """
@@ -162,10 +159,9 @@ def find_targets_process(image, color):
         #    targets.append([col, row]) 
         #--> you may be able to get rid of the if condition below
         
-        print(is_target)
         if is_target:
             #if the object is of the right color, append to targets
             targets.append([col, row])
             
-    print(np.array(object_colors).mean(axis = 0))
+    print("target coslor", np.array(object_colors).mean(axis = 0))
     return targets
